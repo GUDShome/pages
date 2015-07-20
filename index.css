@@ -1,0 +1,47 @@
+
+@import "compass/css3";
+
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+
+ body {
+ 	font-family: 'Roboto';
+ 	margin: 0 auto;
+ }
+
+
+	#icon, .intro p {
+		font-size: 50px;
+		text-align: left;
+		color: white;
+	}
+
+	.intro p {
+		text-align: center;
+		font-size: 30px;
+	}
+
+	#scroll {
+		background-color: white;
+		font-family: 'Roboto';
+		font-weight: bold;
+		text-decoration: none;
+		font-size: 13px;
+		border: none;
+		margin: 0 auto;
+		width: 213px;
+		padding: 10px;
+		color: #0F0326;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
