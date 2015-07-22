@@ -27,7 +27,7 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['#0F0326', '#1BBC9B', '#7E8F7C'],
+				sectionsColor: ['#0F0326', 'white', '#FFE680'],
 				scrollBar: true
 			});
 		});
@@ -38,32 +38,36 @@
 
 
 <div id="fullpage">
-	<div class="section " id="section0">
-		<img id="icon" src="http://i.imgur.com/M3SlEYu.png">
+	<div class="section" id="section0">
+		<img id="icon" src="http://imgur.com/M3SlEYu.png">
 		<div class="intro">
 			<p>I'm a developer/designer.</p>
 		</div>
-		<a href="#secondPage" id="scroll">PROJECTS</a>
+		<a href="#secondPage" class="scroll">PROJECTS</a>
 	</div>
 	<div class="section" id="section1">
+		<div id="bar">Programs I've built.</div>
 	    <div class="slide" id="slide1">
-			<div class="intro">
-				<h1>Free scroll</h1>
-				<p>
-					Users can still using the scroll bar and fullPage.js will do the rest!
-				</p>
-			</div>
+	    	<h1>Checkers</h1>
+	    	Command-line interface version of the strategy board game.
+	    	<br></br>
+	    	<img src="http://i.imgur.com/sbJgd0g.png">
+	    	<br></br>
+	    	Made in Java. <a href="#secondPage" class="scroll" id="download">DOWNLOAD JAR</a>
 		</div>
 
 	    <div class="slide" id="slide2">
-			<h1>Slide 2</h1>
+	    	<h1>ActrAddr</h1>
+	    	An entertainment calculator that takes in actors as inputs.
+	    	<br></br>
+	    	<img src="http://i.imgur.com/eQiwuw2.png">
+	    	<br></br>
+	    	Made in JavaScript. <a href="http://sarumain.github.io/pages/actraddr.html" class="scroll" id="download">LIVE DEMO</a>
 		</div>
 
 	</div>
 	<div class="section" id="section2">
-		<div class="intro">
-			<h1>Great User Experience!</h1>
-		</div>
+		<div id="bar">Designs I've made.</div>
 	</div>
 </div>
 
