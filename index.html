@@ -26,9 +26,12 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['#0F0326', 'white', '#FFE680'],
+				sectionsColor: ['#0F0326', '#ebfad1', '#f4f19c'],
+				anchors: ['index', 'code', 'graphics'],
+				scrollingSpeed: 1000,
+				css3: true,
 				scrollBar: true
+
 			});
 		});
 	</script>
@@ -38,38 +41,66 @@
 
 
 <div id="fullpage">
+
 	<div class="section" id="section0">
 		<img id="icon" src="http://imgur.com/M3SlEYu.png">
 		<div class="intro">
 			<p>I'm a developer/designer.</p>
 		</div>
-		<a href="#secondPage" class="scroll">PROJECTS</a>
+		<a href="#code" class="scroll">PROJECTS</a>
+		<a href="mailto:email@echoecho.com " class="scroll" id="download">HIRE ME</a>
 	</div>
+
+
 	<div class="section" id="section1">
 		<div id="bar">Programs I've built.</div>
 	    <div class="slide" id="slide1">
 	    	<h1>Checkers</h1>
-	    	Command-line interface version of the strategy board game.
+	    	Command-line interface version of the strategy board game
 	    	<br></br>
 	    	<img src="http://i.imgur.com/sbJgd0g.png">
 	    	<br></br>
 	    	Made in Java. <a href="#secondPage" class="scroll" id="download">DOWNLOAD JAR</a>
 		</div>
-
 	    <div class="slide" id="slide2">
 	    	<h1>ActrAddr</h1>
-	    	An entertainment calculator that takes in actors as inputs.
+	    	An entertainment calculator that takes in actors as inputs
 	    	<br></br>
 	    	<img src="http://i.imgur.com/eQiwuw2.png">
 	    	<br></br>
 	    	Made in JavaScript. <a href="http://sarumain.github.io/pages/actraddr.html" class="scroll" id="download">LIVE DEMO</a>
 		</div>
-
 	</div>
+
 	<div class="section" id="section2">
 		<div id="bar">Designs I've made.</div>
+		<div class="slide">
+			<h1>DeRo United</h1>
+			Marketing presentation for youth soccer organization created by former professional soccer player Dwayne De Rosario
+	    	<br></br>
+	    	<img src="http://i.imgur.com/x9RHY0p.png">
+	    	<br></br>
+	    	<a href="http://sarumain.github.io/pages/actraddr.html" class="scroll" id="download">DONWLOAD PDF</a>
+		</div>
+		<div class="slide">
+			<h1>Br3athe</h1>
+			Marketing brochure for non-for-profit business networking service in Toronto
+	    	<br></br>
+	    	<img src="http://i.imgur.com/2qbbnJ4.png">
+	    	<br></br>
+	    	<a href="http://sarumain.github.io/pages/actraddr.html" class="scroll" id="download">DONWLOAD PDF</a>
+		</div>
+		<div class="slide">
+			<h1>Roger Sidhu</h1>
+			Signage and business card for Mississauga area real estate broker
+ 	    	<br></br>
+	    	<img src="http://i.imgur.com/TGzpjPg.png">
+		</div>
+		</div>
 	</div>
+
+
 </div>
 
 </body>
-</html>
+in
