@@ -1,14 +1,178 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Sandeep Arumainayagam</title>
+	<title>Fixed headers - fullPage.js</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage fixed header and footer." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
+	<meta name="Resource-type" content="Document" />
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" type="text/css" href="http://sarumain.github.io/pages/jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="index.css" />
 
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	body {
+		font-family: 'Lato', sans-serif!important;
+	}
+
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+	.intro p{
+		color: #fff;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+	/* Fixed header and footer.
+	* --------------------------------------- */
+	#header {
+		position:fixed;
+		height: 100px;
+		display:block;
+		font-size: 20pt;
+		width: 100%;
+		background: white url("logo.png") no-repeat;
+		z-index:9;
+		top:0px;
+  		vertical-align: middle;
+		padding-left: 100px;
+		color: black;
+
+	}
+
+	#header a {
+		border-radius: 5px;
+		display: inline-block;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top:20px;
+		padding: 10px;
+		color: #A8ACAD;
+	}
+
+	#header a:hover {
+		color: #BCD35F;
+	}
+
+	#donate {
+		background-color: #F78181;
+		color: white!important;
+	}
+
+	#donate:hover {
+		background-color: #FA5858;
+	}
+
+	#section0 {
+    position: relative;
+    background: #5C97FF;
+    overflow: hidden;
+}
+/* You could use :after - it doesn't really matter */
+#section0:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-image: url('http://i.imgur.com/sQH09a0.jpg');
+    background-repeat: no-repeat;
+    background-position: center right;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+	#section0 p {
+		color: black;
+		font-size: 100px;
+	}
+
+	.section {
+		margin:0 auto;
+	}
+
+	.section h1 {
+		font-style: bold;
+		color: #89A02C;
+	}
+
+#text {
+	float: left;
+	color: gray;
+	font-size: 18px;
+}
+
+#image {
+	float: right;
+}
+
+#section1 #image {
+	background:url("http://i.imgur.com/HsFLwTj.jpg");
+	background-position: center top;
+}
+
+#section2 #image {
+	background:url("http://i.imgur.com/KuoIrEp.jpg?2");
+	background-position: top left;
+}
+
+#section3 #image {
+	background:url("http://i.imgur.com/D3gRnwu.jpg");
+	background-position: bottom left;
+}
+
+ 
+#section4 .items li .outerContainer .innerContainer {
+	width: 1200px;
+}
+
+.items li .outerContainer
+{
+	display: table;
+	height: 500px;
+	width: 100%;
+}
+  
+.items li .outerContainer .innerContainer
+{
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0 auto;
+	text-align: center;
+	width: 550px;
+	padding: 50px;
+}
+
+	#section5 h1 {
+		font-style: bold;
+		color: white;
+	}
+
+  
+
+	</style>
 
 	<!--[if IE]>
 		<script type="text/javascript">
@@ -19,19 +183,16 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
-	<script type="text/javascript" src="http://sarumain.github.io/pages/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="jquery.slimscroll.min.js"></script>
 
-	<script type="text/javascript" src="http://sarumain.github.io/pages/jquery.fullPage.min.js"></script>
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				sectionsColor: ['#0F0326', '#ebfad1', '#f4f19c'],
-				anchors: ['index', 'code', 'graphics'],
-				scrollingSpeed: 1000,
-				css3: true,
-				scrollBar: true
-
+				anchors: ['home', 'about', 'sponsor', 'events', 'contact', 'donate'],
+				css3: true
 			});
 		});
 	</script>
@@ -39,84 +200,117 @@
 </head>
 <body>
 
+<div id="header"><a href="#about">About Us</a><a href="#sponsor">Sponsor a Child</a><a href="#events">Events</a><a href="#contact">Contact Us</a><a href="#donate" id="donate">Donate</a></div>
 
 <div id="fullpage">
-
-	<div class="section" id="section0">
-		<img id="icon" src="http://imgur.com/M3SlEYu.png">
+	<div class="section " id="section0">
 		<div class="intro">
-			<p>I'm a developer/designer.</p>
+			<p>Educate. Empower. Inspire.</p>
 		</div>
-		<a href="#code" class="scroll">PROJECTS</a>
-		<a href="mailto:sandeeparumain@gmail.com " class="scroll" id="download">HIRE ME</a>
 	</div>
-
-
 	<div class="section" id="section1">
-		<div id="bar">Programs I've built.</div>
-	    <div class="slide" id="slide1">
-	    	<h1>Checkers</h1>
-	    	Command-line interface version of the strategy board game
-	    	<br></br>
-	    	<img src="http://i.imgur.com/sbJgd0g.png">
-	    	<br></br>
-	    	Made in Java. <a href="http://www.filedropper.com/checkers" class="scroll" id="download">DOWNLOAD JAR</a>
-		</div>
-	  <div class="slide" id="slide2">
-	    	<h1>Checkers</h1>
-	    	GUI version of the strategy board game
-	    	<br></br>
-	    	<img src="http://i.imgur.com/0AU3piI.png">
-	    	<br></br>
-	    	Made in Java. <a href="http://www.filedropper.com/checkersgui" class="scroll" id="download">DOWNLOAD JAR</a>
-		</div>
-	    <div class="slide" id="slide3">
-	    	<h1>ActrAddr</h1>
-	    	An entertainment calculator that takes in actors as inputs
-	    	<br></br>
-	    	<img src="http://i.imgur.com/eQiwuw2.png">
-	    	<br></br>
-	    	Made in JavaScript. <a href="http://sarumain.github.io/pages/actraddr.html" class="scroll" id="download">LIVE DEMO</a>
-		</div>
-	      <div class="slide" id="slide4">
-	    	<h1>Order Taker</h1>
-	    	Simple database of coffee orders
-	    	<br></br>
-	    	<img src="http://i.imgur.com/Mkq9RJ9.png">
-	    	<br></br>
-	    	Made in JavaScript. <a href="http://sarumain.github.io/pages/timhortons.html" class="scroll" id="download">LIVE DEMO</a>
-		</div>
+	 <div class="items">
+  <ul>
+  
+  <li id="text">
+  <div class="outerContainer">
+  <div class="innerContainer">
+  <div class="element"><h1>Mission</h1><br/>We are a not-for profit organization that support regional groups which undertake school projects to give children in developing countries care and high quality education.</div>
+  </div>
+  </div>
+  </li>
+  
+  <li id="image">
+  <div class="outerContainer">
+  <div class="innerContainer">
+  <div class="element"></div>
+  </div>
+  </div>
+  </li>
+  
+  
+  </ul>
 	</div>
 
+	</div>
 	<div class="section" id="section2">
-		<div id="bar">Designs I've made.</div>
-		<div class="slide">
-			<h1>DeRo United</h1>
-			Marketing presentation for youth soccer organization created by former professional soccer player Dwayne De Rosario
-	    	<br></br>
-	    	<img src="http://i.imgur.com/x9RHY0p.png">
-	    	<br></br>
-	    	<a href="http://www.docdroid.net/QF5f4eh/deroupdate2.pdf.html" class="scroll" id="download">DOWNLOAD PDF</a>
-		</div>
-		<div class="slide">
-			<h1>Br3athe</h1>
-			Marketing brochure for non-for-profit business networking service in Toronto
-	    	<br></br>
-	    	<img src="http://i.imgur.com/2qbbnJ4.png">
-	    	<br></br>
-	    	<a href="http://www.docdroid.net/CanX5Qt/breathepdf.pdf.html" class="scroll" id="download">DOWNLOAD PDF</a>
-		</div>
-		<div class="slide">
-			<h1>Roger Sidhu</h1>
-			Signage and business card for Mississauga area real estate broker
- 	    	<br></br>
-	    	<img src="http://i.imgur.com/TGzpjPg.png">
-		</div>
-		</div>
+	 <div class="items">
+  <ul>
+  
+  <li id="text">
+  <div class="outerContainer">
+  <div class="innerContainer">
+  <div class="element"><h1>Sponsor a Child</h1><br/>Blank for now.</div>
+  </div>
+  </div>
+  </li>
+  
+  <li id="image">
+  <div class="outerContainer">
+  <div class="innerContainer">
+  <div class="element"></div>
+  </div>
+  </div>
+  </li>
+  
+  
+  </ul>
+	</div>
+	</div>
+		<div class="section" id="section3">
+	 <div class="items">
+  <ul>
+  
+  <li id="text">
+  <div class="outerContainer">
+  <div class="innerContainer">
+  <div class="element"><h1>Events</h1><br/>Join us for our annual fundraiser on October 16, 2015. 100% of all proceeds will be donated to Cheka School – a local school in Arusha, Tanzania committed to furthering the development and education of children. 
+Stay tuned for more details!</div>
+  </div>
+  </div>
+  </li>
+  
+  <li id="image">
+  <div class="outerContainer">
+  <div class="innerContainer">
+  <div class="element"></div>
+  </div>
+  </div>
+  </li>
+  
+  
+  </ul>
+	</div>
 	</div>
 
+		<div class="section" id="section4">
+	 <div class="items">
+  <ul>
+  
+  <li id="text">
+  <div class="outerContainer">
+  <div class="innerContainer">
+  <div class="element"><h1>Contact Us</h1><br/><b>Shikha Bansal, Co-Founder:</b>
+Shikha is a Chartered Accountant and completed her undergraduate degree from the Rotman School of Business at University of Toronto in 2005. She currently works as a Senior Analyst in Corporate Credit at TD Bank. In addition to her involvement with G.U.D.S, she also sits on the Board of Directors for Oasis Animal Rescue and Educational Centre, a charity committed to raising awareness on animal welfare.<br></br>
+<b>Aprit Bansal, Co-Founder:</b> Arpit obtained his undergraduate degree from the Richard Ivey School of Business at Western University in 2009 and works as an investment banking analyst in London, England. Arpit also sits on the advisory board for Parley Maldives, an environmental charity committed to cleaning oceans of plastic.<br></br>
+<b>Sandra Chiu, Director of Marketing</b>
+Sandra is a Chartered Accountant and completed her undergraduate degree from University of Waterloo in 2004. She currently works as Director of Finance for Bridgepoint Hospital and has spent several weeks teaching at various orphanages in Africa and Peru.<br></br>
+<b>Renu Mehta, Director of Events</b>
+Renu is a journalist for Indian Express and runs Imagebuilderz, a communications organization offering public and media relations services. She is a graduate from Seneca College, and in 2012, she was awarded the Queen’s medal for her contributions to the community.</div>
+  </div>
+  </div>
+  </li>
+  </ul>
+	</div>
+	</div>
 
+			<div class="section" id="section5" style="background-color: #89A02C; ">
+		<div class="intro">
+			<h1>Donate</h1>
+		</div>
+	</div>
 </div>
 
+
 </body>
-in
+</html>
